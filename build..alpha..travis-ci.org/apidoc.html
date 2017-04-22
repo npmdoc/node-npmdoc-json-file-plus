@@ -1,0 +1,582 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ljharb/json-file-plus#readme"
+
+    >json-file-plus (v3.3.0)</a>
+</h1>
+<h4>Read from and write to a JSON file, minimizing diffs and preserving formatting.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-file-plus">module json-file-plus</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.json-file-plus">
+            function <span class="apidocSignatureSpan"></span>json-file-plus
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONData">
+            function <span class="apidocSignatureSpan">json-file-plus.</span>JSONData
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONFile">
+            function <span class="apidocSignatureSpan">json-file-plus.</span>JSONFile
+            <span class="apidocSignatureSpan">(filename, raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.sync">
+            function <span class="apidocSignatureSpan">json-file-plus.</span>sync
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-file-plus.</span>JSONData.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-file-plus.</span>JSONFile.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-file-plus.JSONData">module json-file-plus.JSONData</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONData.JSONData">
+            function <span class="apidocSignatureSpan">json-file-plus.</span>JSONData
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-file-plus.JSONData.prototype">module json-file-plus.JSONData.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONData.prototype.get">
+            function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>get
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONData.prototype.remove">
+            function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>remove
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONData.prototype.set">
+            function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>set
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONData.prototype.stringify">
+            function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>stringify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-file-plus.JSONFile">module json-file-plus.JSONFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONFile.JSONFile">
+            function <span class="apidocSignatureSpan">json-file-plus.</span>JSONFile
+            <span class="apidocSignatureSpan">(filename, raw)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-file-plus.JSONFile.prototype">module json-file-plus.JSONFile.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONFile.prototype.save">
+            function <span class="apidocSignatureSpan">json-file-plus.JSONFile.prototype.</span>save
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-file-plus.JSONFile.prototype.saveSync">
+            function <span class="apidocSignatureSpan">json-file-plus.JSONFile.prototype.</span>saveSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-file-plus.JSONFile.prototype.</span>format</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-file-plus" id="apidoc.module.json-file-plus">module json-file-plus</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.json-file-plus" id="apidoc.element.json-file-plus.json-file-plus">
+        function <span class="apidocSignatureSpan"></span>json-file-plus
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readJSON(filename) {
+	var callback;
+	if (arguments.length &#x3e; 1) {
+		callback = arguments[1];
+		if (!is.fn(callback)) {
+			throw new TypeError(&#x27;callback must be a function if provided&#x27;);
+		}
+	}
+	var deferred = promiseback(callback);
+	fs.readFile(filename, { encoding: &#x27;utf8&#x27; }, function (err, raw) {
+		var file;
+
+		if (err) {
+			deferred.reject(err);
+		} else {
+			try {
+				file = new JSONFile(filename, raw);
+				deferred.resolve(file);
+			} catch (e) {
+				deferred.reject(e);
+			}
+		}
+	});
+	return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONData" id="apidoc.element.json-file-plus.JSONData">
+        function <span class="apidocSignatureSpan">json-file-plus.</span>JSONData
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONData(raw) {
+	var hasTrailingNewline = (/\n\n$/).test(raw);
+	var indentMatch = String(raw).match(/^[ \t]+/m);
+	var indent = indentMatch ? indentMatch[0] : 2;
+
+	this.format = {
+		indent: indent,
+		trailing: hasTrailingNewline
+	};
+	if (raw) {
+		this.data = JSON.parse(raw);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONFile" id="apidoc.element.json-file-plus.JSONFile">
+        function <span class="apidocSignatureSpan">json-file-plus.</span>JSONFile
+        <span class="apidocSignatureSpan">(filename, raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONFile(filename, raw) {
+	JSONData.call(this, raw);
+	this.filename = filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.sync" id="apidoc.element.json-file-plus.sync">
+        function <span class="apidocSignatureSpan">json-file-plus.</span>sync
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readJSONSync(filename) {
+	var raw = fs.readFileSync(filename, &#x27;utf8&#x27;);
+	return new JSONFile(filename, raw);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-file-plus.JSONData" id="apidoc.module.json-file-plus.JSONData">module json-file-plus.JSONData</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONData.JSONData" id="apidoc.element.json-file-plus.JSONData.JSONData">
+        function <span class="apidocSignatureSpan">json-file-plus.</span>JSONData
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONData(raw) {
+	var hasTrailingNewline = (/\n\n$/).test(raw);
+	var indentMatch = String(raw).match(/^[ \t]+/m);
+	var indent = indentMatch ? indentMatch[0] : 2;
+
+	this.format = {
+		indent: indent,
+		trailing: hasTrailingNewline
+	};
+	if (raw) {
+		this.data = JSON.parse(raw);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-file-plus.JSONData.prototype" id="apidoc.module.json-file-plus.JSONData.prototype">module json-file-plus.JSONData.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONData.prototype.get" id="apidoc.element.json-file-plus.JSONData.prototype.get">
+        function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>get
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key, callback) {
+	var data = extend({}, this.data);
+	if (is.fn(key)) {
+		callback = key;
+		key = null;
+	}
+	var value = key ? data[key] : data;
+	if (is.hash(value)) {
+		value = extend({}, value);
+	}
+	var deferred = promiseback(callback);
+	deferred.resolve(value);
+	return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* Note: jsonFile also returns a Promise, if you prefer that to a Node-style callback (&#x22;errorback&#x22;). */
+jsonFile(filename, function (err, file) {
+	if (err) { return doSomethingWithError(err); }
+
+	file.data; // Direct access to the data from the file
+	file.format; // extracted formatting data. change at will.
+
+	file.<span class="apidocCodeKeywordSpan">get</span>(&#x27;version&#x27;); // get top-level keys. returns a Promise
+	file.get(&#x27;version&#x27;, callback); // get top-level keys. calls the errorback
+	file.get(); // get entire data. returns a Promise
+	file.get(callback); // get entire data. calls the errorback
+
+	/* pass any plain object into &#x22;set&#x22; to merge in a deep copy */
+	/* please note: references will be broken. */
+	/* if a non-plain object is passed, will throw a TypeError. */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONData.prototype.remove" id="apidoc.element.json-file-plus.JSONData.prototype.remove">
+        function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>remove
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (key, callback) {
+	var data = this.data;
+	var deletion = Promise.resolve().then(function () {
+		checkKey(key);
+		var status = delete data[key];
+		if (!status) {
+			return Promise.reject(new Error(&#x27;deletion failed&#x27;));
+		}
+		return void 0;
+	});
+	return promiseback(deletion, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	file.set({
+		foo: &#x27;bar&#x27;,
+		bar: {
+			baz: true
+		}
+	});
+	
+	file.<span class="apidocCodeKeywordSpan">remove</span>(&#x27;description&#x27;); // remove a specific key-value pair. returns a
+ Promise
+    	file.remove(&#x27;description&#x27;, callback); // remove a specific key-value pair. calls the errorback
+
+	/* change the filename if desired */
+	file.filename = path.join(process.cwd(), &#x27;new-package.json&#x27;);
+
+	/* Save the file, preserving formatting. */
+	/* Errorback will be passed to fs.writeFile */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONData.prototype.set" id="apidoc.element.json-file-plus.JSONData.prototype.set">
+        function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>set
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (obj) {
+	if (!is.hash(obj)) { throw new TypeError(&#x27;object must be a plain object&#x27;); }
+	extend(true, this.data, obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	file.get(&#x27;version&#x27;, callback); // get top-level keys. calls the errorback
+	file.get(); // get entire data. returns a Promise
+	file.get(callback); // get entire data. calls the errorback
+
+	/* pass any plain object into &#x22;set&#x22; to merge in a deep copy */
+	/* please note: references will be broken. */
+	/* if a non-plain object is passed, will throw a TypeError. */
+	file.<span class="apidocCodeKeywordSpan">set</span>({
+		foo: &#x27;bar&#x27;,
+		bar: {
+			baz: true
+		}
+	});
+	
+	file.remove(&#x27;description&#x27;); // remove a specific key-value pair. returns a Promise
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONData.prototype.stringify" id="apidoc.element.json-file-plus.JSONData.prototype.stringify">
+        function <span class="apidocSignatureSpan">json-file-plus.JSONData.prototype.</span>stringify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stringify() {
+	var endingNewlines = this.format.trailing ? &#x27;\n\n&#x27; : &#x27;\n&#x27;;
+	var indent = this.format.indent || 2;
+	return new Buffer(JSON.stringify(this.data, null, indent) + endingNewlines);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	});
+	return promiseback(deletion, callback);
+};
+
+JSONData.prototype.stringify = function stringify() {
+	var endingNewlines = this.format.trailing ? &#x27;\n\n&#x27; : &#x27;\n&#x27;;
+	var indent = this.format.indent || 2;
+	return new Buffer(JSON.<span class="apidocCodeKeywordSpan">stringify</span>(this.data, null, indent) + endingNewlines);
+};
+
+var JSONFile = function JSONFile(filename, raw) {
+	JSONData.call(this, raw);
+	this.filename = filename;
+};
+JSONFile.prototype = new JSONData();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-file-plus.JSONFile" id="apidoc.module.json-file-plus.JSONFile">module json-file-plus.JSONFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONFile.JSONFile" id="apidoc.element.json-file-plus.JSONFile.JSONFile">
+        function <span class="apidocSignatureSpan">json-file-plus.</span>JSONFile
+        <span class="apidocSignatureSpan">(filename, raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONFile(filename, raw) {
+	JSONData.call(this, raw);
+	this.filename = filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-file-plus.JSONFile.prototype" id="apidoc.module.json-file-plus.JSONFile.prototype">module json-file-plus.JSONFile.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONFile.prototype.save" id="apidoc.element.json-file-plus.JSONFile.prototype.save">
+        function <span class="apidocSignatureSpan">json-file-plus.JSONFile.prototype.</span>save
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (callback) {
+	var deferred = promiseback(callback);
+	fs.writeFile(this.filename, this.stringify(), function (err, result) {
+		if (err) {
+			deferred.reject(err);
+		} else {
+			deferred.resolve(result);
+		}
+	});
+	return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	/* change the filename if desired */
+	file.filename = path.join(process.cwd(), &#x27;new-package.json&#x27;);
+
+	/* Save the file, preserving formatting. */
+	/* Errorback will be passed to fs.writeFile */
+	/* Returns a Promise. */
+	file.<span class="apidocCodeKeywordSpan">save</span>(callback).then(function () {
+		console.log(&#x27;success!&#x27;);
+	}).catch(function (err) {
+		console.log(&#x27;error!&#x27;, err);
+	});
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-file-plus.JSONFile.prototype.saveSync" id="apidoc.element.json-file-plus.JSONFile.prototype.saveSync">
+        function <span class="apidocSignatureSpan">json-file-plus.JSONFile.prototype.</span>saveSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveSync = function () {
+	fs.writeFileSync(this.filename, this.stringify());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
